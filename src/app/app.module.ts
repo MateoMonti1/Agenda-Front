@@ -3,14 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './public/pages/register/register.component';
+
 import { HeaderComponent } from './public/components/header/header.component';
+import { ListaContactosComponent } from './public/pages/lista-contactos/lista-contactos.component';
+import { DeleteContactsComponent } from './public/pages/delete-contacts/delete-contacts.component';
+import { NewContactsComponent } from './public/pages/new-contacts/new-contacts.component';
+import { OkDeleteContactsComponent } from './public/pages/ok-delete-contacts/ok-delete-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    HeaderComponent
+
+    HeaderComponent,
+     ListaContactosComponent,
+     DeleteContactsComponent,
+     NewContactsComponent,
+     OkDeleteContactsComponent
   ],
   imports: [
     BrowserModule,

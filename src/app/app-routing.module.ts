@@ -3,15 +3,27 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '', pathMatch: 'full' //Para el home
-  },
-  {
-    path: '**', redirectTo: '', pathMatch: 'full' //Para el 404
-  }/*,
-  {
-    path: '404-not-found',
-    loadChildren: ()=> import('@public/pages/not-found/not-found.module').then(m => m.NotFoundModule)
-  }*/
+    path: '',
+    loadChildren: () => import('./public/pages/home/home.module').then(m => m.HomeModule)
+
+    },
+    {
+      path:"lista-contactos",
+      loadChildren: () => import('./public/pages/lista-contactos/lista-contactos.module').then(m => m.ListaContactosModule)
+  
+      },
+      {
+        path:"contactos",
+        loadChildren: () => import('./public/pages/contact/contact.module').then(m => m.ContactModule)
+    
+        },
+        {
+          path:"new",
+          loadChildren: () => import('./public/pages/new-contacts/new-contacts.module').then(m => m.NewContactsModule)
+      
+          },
+        
+
 ];
 
 @NgModule({
