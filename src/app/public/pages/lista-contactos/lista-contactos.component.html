@@ -4,7 +4,7 @@
         <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt="">
         <a class="button" [routerLink]="['/new']" class="add"><img src="../assets/img/add_circle.png" alt=""></a> </a>
         
-        <div class="lista">Lista de contactos</div>
+        <div class="lista">Lista de contactos por nombres </div>
     
   </H1></div>
   <section class="container"><div class="buscar">
@@ -12,23 +12,10 @@
 
 
   <section class="flex-container">
-      <a  class="button" [routerLink]="['/contactos']">PEPE ARGENTO
-      </a>
-      <div  class="button">CONTACTOS
-        
-      </div>
-      <div  class="button">CONTACTOS
-        
-      </div>
-      <div  class="button">CONTACTOS
-        
-      </div>
-    <div  class="button">CONTACTOS
+      <a  class="button" [routerLink]="['/contactos']" *ngFor="let name_contacts of name_contacts"> Nombre: {{name_contacts.first_name }} </a>
       
-    </div>
-    <div class="button">CONTACTOS
       
-    </div>
+   
   </section>
 
 
