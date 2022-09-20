@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {name_contacts, Name_Contact} from 'src/app/core/interface/contacts'
+
 @Component({
   selector: 'app-lista-contactos',
   templateUrl: './lista-contactos.component.html',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaContactosComponent implements OnInit {
 
+  name_contacts:Name_Contact[] = name_contacts;
   constructor() { }
 
   ngOnInit(): void {
