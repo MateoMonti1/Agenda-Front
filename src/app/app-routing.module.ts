@@ -32,6 +32,7 @@ const routes: Routes = [
               loadChildren: () => import('./public/pages/ok-delete-contacts/ok-delete-contacts.module').then(m => m.OkDeleteContactsModule)
           
               },
+              
 
 ];
 
