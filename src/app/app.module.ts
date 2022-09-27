@@ -9,6 +9,7 @@ import { ListaContactosComponent } from './public/pages/lista-contactos/lista-co
 import { DeleteContactsComponent } from './public/pages/delete-contacts/delete-contacts.component';
 import { NewContactsComponent } from './public/pages/new-contacts/new-contacts.component';
 import { OkDeleteContactsComponent } from './public/pages/ok-delete-contacts/ok-delete-contacts.component';
+import { OkContactComponent } from './public/pages/ok-contact/ok-contact.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OkDeleteContactsComponent } from './public/pages/ok-delete-contacts/ok-
      ListaContactosComponent,
      DeleteContactsComponent,
      NewContactsComponent,
-     OkDeleteContactsComponent
+     OkDeleteContactsComponent,
+     OkContactComponent
   ],
   imports: [
     BrowserModule,
