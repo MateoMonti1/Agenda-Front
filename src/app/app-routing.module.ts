@@ -27,7 +27,11 @@ const routes: Routes = [
             loadChildren: () => import('./public/pages/delete-contacts/delete-contacts.module').then(m => m.DeleteContactsModule)
         
             },
-        
+            {
+              path:"ok-delete",
+              loadChildren: () => import('./public/pages/ok-delete-contacts/ok-delete-contacts.module').then(m => m.OkDeleteContactsModule)
+          
+              },
 
 ];
 
