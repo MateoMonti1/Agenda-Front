@@ -1,7 +1,10 @@
 <div class="fondo"> 
   <H1> 
-        <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt="">
-        <a class="button" [routerLink]="['/delete']" class="add"><img src="../assets/img/delete.png" alt=""></a> </a>
+    <div class="imgs">
+        <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+        <a class="button" [routerLink]="['/delete']" class="delete"><img src="../assets/img/delete.png" alt=""></a> 
+    </div>
+
         
         <div class="lista">Lista de contactos con datos completos</div>
     
@@ -12,23 +15,23 @@
 
   <section class="flex-container" *ngFor="let contact of contacts" >
       
-      <div  class="button" > Nombre: {{ contact.first_name }}
+      <div  class="box" > Nombre: {{ contact.first_name }}
         
       </div>
-      <div  class="button">Apellido: {{contact.last_name }}
+      <div  class="box">Apellido: {{contact.last_name }}
 
         
       </div>
-      <div  class="button"><img src="../assets/img/calling.png" alt="" class="img2">Telefono: {{contact.phone1 }}
+      <div  class="box"><img src="../assets/img/calling.png" alt="" class="img2">Telefono: {{contact.phone1 }}
         
       </div>
-    <div  class="button"><img src="../assets/img/call.png" alt="" class="img2">Telefono 2: {{contact.phone2 }}
+    <div  class="box"><img src="../assets/img/call.png" alt="" class="img2">Telefono 2: {{contact.phone2 }}
       
     </div>
-    <div class="button"><img src="../assets/img/Union.png" alt="" class="img2">Ciudad: {{contact.city }}
+    <div class="box"><img src="../assets/img/Union.png" alt="" class="img2">Ciudad: {{contact.city }}
       
     </div>
-    <div class="button">E-mail: {{contact.email }}
+    <div class="box">E-mail: {{contact.email }}
       
     </div>
   </section>

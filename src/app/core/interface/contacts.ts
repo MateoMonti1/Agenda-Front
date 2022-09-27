@@ -20,8 +20,6 @@ export const name_contacts:Name_Contact[] =[{
   {"first_name":"Korella"},{"first_name":"Dianna"},
   {"first_name":"Florenza"},{"first_name":"Layton"}
 
-
-
 ]
 
 export const contacts :Contact[] =  [{"first_name":"Bari","last_name":"Drover","phone1":"3238118551","phone2":"4829064904","city":"Kiyevskoye","email":"bdrover0@simplemachines.org"},
