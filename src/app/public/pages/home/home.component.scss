@@ -6,11 +6,13 @@
   background: #1C198A;
   border: 1px solid black;
   justify-content: center;
-  height: 600px;
+  height: 800px;
   align-items: center;
-  flex-direction:column;
-
+  flex-direction: column;
+  border-radius: 15px;
 }
+
+
 
 .button{
 
@@ -19,11 +21,15 @@
   left: 0px;
   top: 385px;
   font-size: 30px;
-  background: #FFFFFF;
+  font-weight: 1000;
+  background: #ffffff;
   border: 1px solid #000000;
   box-shadow: 0px 3px 0px #000000;
   text-align: center;
   padding-top: 35px;
+  border-radius: 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  backdrop-filter: blur(x);
 
 }
 
