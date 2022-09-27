@@ -6,7 +6,7 @@
   background: #1C198A;
   border: 1px solid black;
   justify-content: center;
-  height: 600px;
+  height: auto;
   align-items: center;
   flex-direction: column;
 
@@ -43,8 +43,8 @@
   display: flex;
   width: auto;
   height: auto;
-  left: 0px;
-  top: 385px;
+  left: auto;
+  top: auto;
   border:1px solid #000000;
   font-size: 30px;
   align-items: center;
@@ -54,13 +54,15 @@
   
 
 }
-.add {
-  display: flex;
-  align-items: center;
-  justify-content: right;
+
   
-}
+
  .button:hover{
   box-shadow: 0px 0px 0px;
   padding: 7px;
  }
+ .imgs{
+  display: flex;
+  justify-content:space-between;
+
+}
