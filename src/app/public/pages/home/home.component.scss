@@ -18,7 +18,36 @@
   border: none;
 }
 
+.inputs{
 
+  width: 428px;
+  height: 78px;
+  left: 0px;
+  top: 385px;
+  font-size: 30px;
+  font-weight: 1000px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: 0px 3px 0px #000000;
+  text-align: center;
+  padding-top: 35px;
+  border-radius: 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  backdrop-filter: blur(x);
+  text-decoration: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.but{
+
+  background:#1C198A;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
 
 .button{
 
@@ -42,6 +71,13 @@
   justify-content: center;
 
 }
+
+.box{
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
 
 .icon-contacts {
   margin-left: 5px;
