@@ -11,7 +11,7 @@
 
 
   <section class="flex-container">
-      <a  class="button" [routerLink]="['/contactos']" *ngFor="let name_contacts of name_contacts"> Nombre: {{name_contacts.first_name }} </a>
+      <a  class="button" [routerLink]="['/contacto',name_contacts.first_name]" *ngFor="let name_contacts of name_contacts"> Nombre: {{name_contacts.first_name }} </a>
       
       
    

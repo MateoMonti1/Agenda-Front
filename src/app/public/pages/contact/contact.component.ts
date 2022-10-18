@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Contact, contacts } from 'src/app/core/interface/contacts';
 
 @Component({
@@ -8,9 +9,14 @@ import { Contact, contacts } from 'src/app/core/interface/contacts';
 })
 export class ContactComponent implements OnInit {
   
-  contacts :Contact[] =contacts;
-  constructor() { }
+  constructor(private ar:ActivatedRoute) { }
+
+  contact: Contact = contacts[0];
 
   ngOnInit(): void {
+    this.ar.params.subscribe(data =>{
+      console.log(data)
+      //this.contactsService.getContact(data.id);
+    })
   }
 }

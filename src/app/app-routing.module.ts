@@ -13,7 +13,7 @@ const routes: Routes = [
   
       },
       {
-        path:"contactos",
+        path:"contacto/:id",
         loadChildren: () => import('./public/pages/contact/contact.module').then(m => m.ContactModule)
     
         },
