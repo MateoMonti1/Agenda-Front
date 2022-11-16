@@ -1,75 +1,95 @@
-
-.flex-container {
-
-  display: flex;
-  background: #1C198A;
-  border: 1px solid black;
-  justify-content: center;
-  height: 600px;
-  align-items: center;
-  flex-direction: column;
-
+.fondo {
+  background-image: linear-gradient(to left,#42275a, #734b6d);
+  border-radius: 15px;
 }
 
-.box{
+.flex-container {
+  display: flex;
+  background: linear-gradient(to left,#42275a, #734b6d);
+  border: 1px solid #42275a;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
 
+.box {
   width: 428px;
   height: 78px;
   left: 0px;
   top: 385px;
-  font-size: 30px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-shadow: 0px 3px 0px #000000;
   text-align: center;
-  padding-top: 35px;
-
+  min-width: 150px;
+  padding: 15px 10px;
+  margin: 20px;
+  background: rgb(214, 214, 214);
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: 'sans-serif';
+  color: #5e5e5e;
 }
 
-.lista{
-
+.lista {
   text-align: center;
+  color:rgb(220, 220, 220);
+  font-weight:bolder;
+  text-shadow: 0 2px 0 #a0a0a0;
+  font-family: 'Dancing Script', cursive;
+  text-decoration: overline;
+  position: relative;
+  bottom: 21px;
+  font-size: 40px;
 }
-.account{
-  width: 150px;
-  height: 130px;
-  left: 139px;
-  top: 163px;
 
+.buscar {
+ text-align: center;
+ padding-right: 50px;
+ font-family: Impact;
+ font-size: 20px;
+ position: relative;
+ right: -12px;
 }
-.img{
 
-  width: 150px;
-  height: 130px;
-  left: 139px;
-  top: 163px;
-
-}
-.container{
-  
+.container {
   display: flex;
   width: auto;
   height: auto;
-  left: 0px;
-  top: 385px;
-  border:1px solid #000000;
+  left: auto;
+  top: auto;
+  border:1px #42275a(50, 207, 207);
   font-size: 30px;
   align-items: center;
   justify-content: center;
   padding-right: 100px;
   padding-left: 100px;
-  
-
-}
-.imgs{
-  display: flex;
-  justify-content:space-between;
-
 }
 
-  
-
- .button:hover{
+ .button:hover {
   box-shadow: 0px 0px 0px;
   padding: 7px;
  }
+ 
+ .imgs {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 32px;
+  cursor: pointer;
+  z-index: 100;
+  filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
+}
+
+.img2 {
+  filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
+  height: 20px;
+  position: relative;
+  right: 25px;
+}

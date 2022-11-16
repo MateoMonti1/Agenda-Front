@@ -1,14 +1,7 @@
-<H1> <div class="container">
-        <div  class="button" [routerLink]="['lista-contactos']" >CONTACTOS
-            <div class="icon-contacts">
-            <img src="../assets/img/account.png" alt="" width="35">
-            </div>
-     </div>
-    </div>
-</H1>
 <section class="flex-container">
     <div id="container-form">
-        <form  #form="ngForm">
+        <h1 class = "lines-effect">Contactos</h1>
+        <form #form="ngForm">
             <div class="inputs">
                 <label for="email">Email</label>
                 <input class="box" type="email" name="email" id="email" autocomplete="email" placeholder="Type your email address">
@@ -19,12 +12,11 @@
             </div>
         
             <div class="but">
-                <button type="submit" [disabled]="form.invalid">Log In</button>
+                <button type="submit" [routerLink]="['lista-contactos']">Log In</button>
                 <button type="button" [routerLink]="['signin']">Sign In</button>
               </div>
         </form>
       </div>
-    
     </section>
 
 

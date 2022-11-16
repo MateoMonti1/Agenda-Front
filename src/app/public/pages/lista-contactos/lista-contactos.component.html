@@ -4,17 +4,8 @@
         <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
         <a class="button" [routerLink]="['/new']" class="add"><img src="../assets/img/add_circle.png" alt=""></a> 
       </div>
-        <div class="lista">Lista de contactos por nombres </div>
+        <h1 class="lista">Mis Contactos</h1>
   </H1></div>
-  <section class="container"><div class="buscar">
-    <img src="../assets/img/search.png" alt="">  Buscar: </div></section>
-
-
   <section class="flex-container">
-      <a  class="button" [routerLink]="['/contacto',name_contacts.first_name]" *ngFor="let name_contacts of name_contacts"> Nombre: {{name_contacts.first_name }} </a>
-      
-      
-   
+      <button  class="button" [routerLink]="['/contacto',name_contacts.first_name]" *ngFor="let name_contacts of name_contacts"> {{name_contacts.first_name}} </button>
   </section>
-
-

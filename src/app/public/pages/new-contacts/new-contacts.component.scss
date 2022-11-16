@@ -1,58 +1,75 @@
+.fondo {
+  background-image: linear-gradient(to left,#42275a, #734b6d);
+  border-radius: 15px;
+}
 
 .flex-container {
 
   display: flex;
-  background: #1C198A;
-  border: 1px solid black;
+  background: linear-gradient(to left,#42275a, #734b6d);
+  border: 1px solid #42275a;
   justify-content: center;
-  height: 600px;
+  height: auto;
   align-items: center;
   flex-direction: column;
+  border-radius: 15px;
 
 }
 
 .box{
 
-  width: 600px;
-  height: auto;
+  width: 428px;
+  height: 78px;
   left: 0px;
   top: 385px;
-  font-size: 30px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
+  background: #42275a(50, 207, 207);
+  border: 1px solid #42275a(50, 207, 207);
   box-shadow: 0px 3px 0px #000000;
   text-align: center;
   padding-top: 35px;
+  min-width: 150px;
+  padding: 15px 10px;
+  margin: 20px;
+  background: rgb(214, 214, 214);
+  border: none;
+  border-radius: 25px;
+  color: #42275a(50, 207, 207);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 
 }
+
 
 .lista{
 
   text-align: center;
+  font-family: sans-serif;
+  color:rgb(220, 220, 220);
+  font-weight:bolder;
+  text-shadow: 0 2px 0 #a0a0a0;
 }
-.account{
-  width: 150px;
-  height: 130px;
-  left: 139px;
-  top: 163px;
 
-}
-.img{
-
-  width: 150px;
-  height: 130px;
-  left: 139px;
-  top: 163px;
-
+.buscar{
+ text-align: center;
+ padding-right: 50px;
+ font-family: Impact;
+ font-size: 20px;
+ position: relative;
+ right: -12px;
 }
 .container{
   
   display: flex;
   width: auto;
   height: auto;
-  left: 0px;
-  top: 385px;
-  border:1px solid #000000;
+  left: auto;
+  top: auto;
+  border:1px #42275a(50, 207, 207);
   font-size: 30px;
   align-items: center;
   justify-content: center;
@@ -61,29 +78,18 @@
   
 
 }
-.imgs{
-  display: flex;
-  justify-content:space-between;
 
-}
-
-
-.cont_input{
-
-  width: auto;
-  height: 50px;
-  left: 0px;
-  top: 30px;
-  font-size: 30px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-shadow: 0px 3px 0px #000000;
-  text-align: center;
   
-}
-
 
  .button:hover{
   box-shadow: 0px 0px 0px;
   padding: 7px;
  }
+ 
+ .imgs{
+  display: flex;
+  justify-content:space-between;
+  position: relative;
+  top: 24px;
+  cursor: pointer;
+}

@@ -1,12 +1,12 @@
 <div class="fondo"> 
   <H1> 
     <div class="imgs">
-        <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-        <a class="button" [routerLink]="['/delete']" class="delete"><img src="../assets/img/delete.png" alt=""></a> 
+        <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+        <a class="button" (click)="borrar.showModal()"><img src="../assets/img/delete.png" alt=""></a> 
     </div>
 
         
-        <div class="lista">Lista de contactos con datos completos</div>
+        <div class="lista">Datos Completos</div>
     
   </H1></div>
   <section class="container"><div class="account">
@@ -15,25 +15,40 @@
 
   <section class="flex-container">
       
-      <div  class="box" > Nombre: {{ contact.first_name }}
+      <button  class="box" > Nombre: {{ contact.first_name}}
         
-      </div>
-      <div  class="box">Apellido: {{contact.last_name }}
+      </button>
+      <button  class="box"> Apellido: {{contact.last_name}}
 
         
-      </div>
-      <div  class="box"><img src="../assets/img/calling.png" alt="" class="img2">Telefono: {{contact.phone1 }}
+      </button>
+      <button  class="box"><img src="../assets/img/calling.png" alt="" class="img2"> Teléfono: {{contact.phone1}}
         
-      </div>
-    <div  class="box"><img src="../assets/img/call.png" alt="" class="img2">Telefono 2: {{contact.phone2 }}
+      </button>
+    <button  class="box"><img src="../assets/img/call.png" alt="" class="img2"> Teléfono 2: {{contact.phone2}}
       
-    </div>
-    <div class="box"><img src="../assets/img/Union.png" alt="" class="img2">Ciudad: {{contact.city }}
+    </button>
+    <button class="box"><img src="../assets/img/Union.png" alt="" class="img2"> Ciudad: {{contact.city}}
       
-    </div>
-    <div class="box">E-mail: {{contact.email }}
+    </button>
+    <button class="box"> E-mail: {{contact.email}}
       
-    </div>
+    </button>
   </section>
 
 
+  <button (click)="borrar.showModal()">
+    Abrir modal
+  </button>
+
+
+  <button (click)="borrar.close()">
+    Abrir modal
+  </button>
+
+  <dialog #borrar type="modal">
+    <p>¿Desea borrar el contacto?</p>
+  <div>
+    <button class="button" [routerLink]="['/lista-contactos']">Si</button>
+    <button class="button" [routerLink]="['/lista-contactos']">No</button>
+  </div>
