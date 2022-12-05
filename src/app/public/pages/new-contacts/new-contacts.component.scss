@@ -4,7 +4,6 @@
 }
 
 .flex-container {
-
   display: flex;
   background: linear-gradient(to left,#42275a, #734b6d);
   border: 1px solid #42275a;
@@ -13,48 +12,44 @@
   align-items: center;
   flex-direction: column;
   border-radius: 15px;
-
 }
 
-.box{
-
+.box {
   width: 428px;
   height: 78px;
   left: 0px;
   top: 385px;
-  background: #42275a(50, 207, 207);
-  border: 1px solid #42275a(50, 207, 207);
-  box-shadow: 0px 3px 0px #000000;
   text-align: center;
-  padding-top: 35px;
   min-width: 150px;
   padding: 15px 10px;
   margin: 20px;
   background: rgb(214, 214, 214);
   border: none;
   border-radius: 25px;
-  color: #42275a(50, 207, 207);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-
+  font-family: 'sans-serif';
+  color: #5e5e5e;
 }
 
 
-.lista{
-
-  text-align: center;
-  font-family: sans-serif;
-  color:rgb(220, 220, 220);
-  font-weight:bolder;
-  text-shadow: 0 2px 0 #a0a0a0;
+.lista {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 14px;
+  font-size: 50px;
+  color: rgb(205, 205, 205);
+  font-family: "Dancing Script", cursive;
+  text-decoration: overline;
 }
 
-.buscar{
+.buscar {
  text-align: center;
  padding-right: 50px;
  font-family: Impact;
@@ -62,8 +57,8 @@
  position: relative;
  right: -12px;
 }
-.container{
-  
+
+.container {
   display: flex;
   width: auto;
   height: auto;
@@ -75,21 +70,47 @@
   justify-content: center;
   padding-right: 100px;
   padding-left: 100px;
-  
-
 }
 
-  
-
- .button:hover{
+.button:hover {
   box-shadow: 0px 0px 0px;
   padding: 7px;
  }
  
- .imgs{
+ .imgs {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-around;
   position: relative;
-  top: 24px;
+  top: 32px;
   cursor: pointer;
+  z-index: 100;
+  filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
+}
+
+.img2 {
+  filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
+  height: 20px;
+  position: relative;
+  right: 25px;
+}
+
+.cont_input {
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  border: unset;
+  font-family: "Segoe UI";
+  font-size: 10px;
+  border-radius: 25px;
+  width: 125px;
+  opacity: 0.4;
+}
+
+dialog {
+  justify-content: center;
+  bottom: 14px;
+  font-size: 25px;
+  color: rgb(205, 205, 205);
+  font-family: 'sans-serif';
+  color: #5e5e5e;
 }

@@ -1,0 +1,30 @@
+<section class="flex-container">
+    <div id="container-form">
+        <h1 class = "lines-effect">Sign In</h1>
+        <form #form="ngForm">
+            <div class="inputs">
+                <label for="Name">Name</label>
+                <input class="box" name="Name" placeholder="Type your Name">
+            </div>
+            <div class="inputs">
+                <label for="LastName">LastName</label>
+                <input class="box" name="LastName" placeholder="Type your LastName">
+            </div>
+            <div class="inputs">
+                <label for="Email">Email</label>
+                <input class="box" type="email" name="email" id="email" autocomplete="email" placeholder="Type your Email Address">
+            </div>
+                <div class="inputs">
+                <label for="password">Password</label>
+                <input class="box" type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your Password">
+            </div>
+            <div class="inputs">
+                <label for="UserName">UserName</label>
+                <input class="box" name="UserName" placeholder="Type your UserName">
+            </div>
+            <div class="but">
+                <button type="button" [routerLink]="['/']">Sign in</button>
+              </div>
+        </form>
+      </div>
+    </section>

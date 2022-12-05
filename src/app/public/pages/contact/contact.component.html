@@ -1,10 +1,13 @@
 <div class="fondo"> 
   <H1> 
-    <div class="imgs">
+    <div class="imgsleft">
         <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-        <a class="button" (click)="borrar.showModal()"><img src="../assets/img/delete.png" alt=""></a> 
     </div>
 
+    <div class="imgsright">
+      <a class="button" (click)="borrar.showModal()"><img src="../assets/img/delete.png" alt=""></a>
+      <a class="button" [routerLink]="['/edit-contact']" class="undo"><img src="../assets/img/Edit.png" alt=""></a>
+  </div>
         
         <div class="lista">Datos Completos</div>
     
@@ -22,33 +25,23 @@
 
         
       </button>
-      <button  class="box"><img src="../assets/img/calling.png" alt="" class="img2"> Teléfono: {{contact.phone1}}
+      <button  class="box"><img src="../assets/img/Telephone.png" alt="" class="img2"> Teléfono: {{contact.phone1}}
         
       </button>
-    <button  class="box"><img src="../assets/img/call.png" alt="" class="img2"> Teléfono 2: {{contact.phone2}}
+    <button  class="box"><img src="../assets/img/Telephone.png" alt="" class="img2"> Teléfono 2: {{contact.phone2}}
       
     </button>
-    <button class="box"><img src="../assets/img/Union.png" alt="" class="img2"> Ciudad: {{contact.city}}
+    <button class="box"><img src="../assets/img/Ubication.png" alt="" class="img2"> Ciudad: {{contact.city}}
       
     </button>
-    <button class="box"> E-mail: {{contact.email}}
+    <button class="box">E-mail: {{contact.email}}
       
     </button>
   </section>
-
-
-  <button (click)="borrar.showModal()">
-    Abrir modal
-  </button>
-
-
-  <button (click)="borrar.close()">
-    Abrir modal
-  </button>
 
   <dialog #borrar type="modal">
     <p>¿Desea borrar el contacto?</p>
   <div>
     <button class="button" [routerLink]="['/lista-contactos']">Si</button>
-    <button class="button" [routerLink]="['/lista-contactos']">No</button>
+    <button class="button" [routerLink]="['/contacto']">No</button>
   </div>

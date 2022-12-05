@@ -28,10 +28,16 @@ const routes: Routes = [
         
             },
             {
-              path:"ok-delete",
-              loadChildren: () => import('./public/pages/ok-delete-contacts/ok-delete-contacts.module').then(m => m.OkDeleteContactsModule)
+              path:"sign-in",
+              loadChildren: () => import('./public/pages/sign-in/sign-in.module').then(m => m.SignInModule)
           
               },
+              {
+                path:"edit-contact",
+                loadChildren: () => import('./public/pages/edit-contact/edit-contact.module').then(m => m.EditContactModule)
+            
+                },
+              
               
 
 ];

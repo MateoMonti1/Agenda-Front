@@ -38,15 +38,14 @@
 }
 
 .lista {
-  text-align: center;
-  color:rgb(220, 220, 220);
-  font-weight:bolder;
-  text-shadow: 0 2px 0 #a0a0a0;
-  font-family: 'Dancing Script', cursive;
-  text-decoration: overline;
+  display: flex;
+  justify-content: center;
   position: relative;
-  bottom: 21px;
-  font-size: 40px;
+  bottom: 32px;
+  font-size: 50px;
+  color: rgb(205, 205, 205);
+  font-family: "Dancing Script", cursive;
+  text-decoration: overline;
 }
 
 .buscar {
@@ -77,12 +76,23 @@
   padding: 7px;
  }
  
- .imgs {
+.imgsright {
   display: flex;
-  justify-content: space-around;
   position: relative;
-  top: 32px;
+  top: 24px;
+  right: 400px;
   cursor: pointer;
+  z-index: 100;
+  filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.imgsleft {
+  display: flex;
+  position: relative;
+  top: 68px;
+  left: 415px;
   z-index: 100;
   filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
 }
@@ -92,4 +102,13 @@
   height: 20px;
   position: relative;
   right: 25px;
+}
+
+dialog {
+  justify-content: center;
+  bottom: 14px;
+  font-size: 25px;
+  color: rgb(205, 205, 205);
+  font-family: 'sans-serif';
+  color: #5e5e5e;
 }

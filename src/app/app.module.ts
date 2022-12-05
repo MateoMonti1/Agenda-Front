@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -10,6 +10,9 @@ import { DeleteContactsComponent } from './public/pages/delete-contacts/delete-c
 import { NewContactsComponent } from './public/pages/new-contacts/new-contacts.component';
 import { OkDeleteContactsComponent } from './public/pages/ok-delete-contacts/ok-delete-contacts.component';
 import { OkContactComponent } from './public/pages/ok-contact/ok-contact.component';
+import { SignInComponent } from './public/pages/sign-in/sign-in.component';
+import { EditContactComponent } from './public/pages/edit-contact/edit-contact.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +23,12 @@ import { OkContactComponent } from './public/pages/ok-contact/ok-contact.compone
      DeleteContactsComponent,
      NewContactsComponent,
      OkDeleteContactsComponent,
-     OkContactComponent
+     OkContactComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
