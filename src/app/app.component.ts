@@ -20,7 +20,7 @@ export class AppComponent {
       UserName: 'string',
       Password: 'string'
     }
-    this.http.post('/api/Authentication/authenticate', body)
+    this.http.post('http://localhost:7263/api/Authentication/authenticate', body)
       /* const helper = new JwtHelperService();
       const decodedToken = helper.decodeToken(token);
       const sub = decodedToken.sub;
@@ -31,7 +31,7 @@ export class AppComponent {
       this.setUserId(sub); //guarda el id en el local storage */
       
     
-    this.http.get('/api/Contact').subscribe(x => console.log(x))
+    this.http.get('http://localhost:7263/api/Contact').subscribe(x => console.log(x))
   }
     getSession(): ISession {
       const item: string = localStorage.getItem('session') || 'invalid';
