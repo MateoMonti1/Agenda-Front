@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contact, contacts } from 'src/app/core/interface/contacts';
+import { Contact, contacts } from 'src/app/core/interfaces/contacts';
 
 @Component({
   selector: 'app-contact',

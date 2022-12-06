@@ -1,0 +1,33 @@
+<div class="fondo"> 
+    <H1> 
+      <div class="imgsleft">
+          <a class="button" href="javascript: history.go(-1)" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+          <a class="button" (click)="borrar.showModal()"><img src="../assets/img/delete.png" alt=""></a>
+          <a class="button" [routerLink]="['/edit-dispositivo']" class="undo"><img src="../assets/img/Edit.png" alt=""></a>
+      </div>
+  
+      <div class="lista">Dispositivo</div>
+      
+    </H1></div>
+    <section class="container"><div class="account">
+      <img src="../assets/img/account.png" alt="" class="img">  </div></section>
+  
+  
+    <section class="flex-container">
+        
+      
+      
+      <button  class="box"><img src="../assets/img/Telephone.png" alt="" class="img2" [routerLink]="['/']"> 3471608220 </button>
+      <button  class="box"><img src="../assets/img/Dispositive.png" alt="" class="img2" [routerLink]="['/']"> Celular </button>
+      <button  class="box"><img src="../assets/img/Job.png" alt="" class="img2" [routerLink]="['/']"> Trabajo </button>
+
+      
+  
+    </section>
+  
+    <dialog #borrar type="modal">
+      <p>¿Desea borrar el Dispositivo?</p>
+    <div>
+      <button class="button" [routerLink]="['/lista-contactos']">Si</button>
+      <button class="button" [routerLink]="['/contacto']">No</button>
+    </div>

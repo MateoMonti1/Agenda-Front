@@ -3,35 +3,36 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { ISession } from './interfaces/session.interface';
+import { ISession } from './core/interfaces/session.interface';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   constructor(private http: HttpClient) { }
   title = 'Proyect';
-  private loggedIn: boolean = false;
-  public hola(){
-   
-    let body = {
-      UserName: 'string',
-      Password: 'string'
-    }
-    this.http.post('http://localhost:7263/api/Authentication/authenticate', body)
-      /* const helper = new JwtHelperService();
-      const decodedToken = helper.decodeToken(token);
-      const sub = decodedToken.sub;
-      console.log(sub); ///busca el id del usuario
   
-      if (!token) return false;
-      this.setSession(token);
-      this.setUserId(sub); //guarda el id en el local storage */
-      
-    
-    this.http.get('http://localhost:7263/api/Contact').subscribe(x => console.log(x))
+  private loggedIn: boolean = false;
+  
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6Ik1hdGVvIiwiZmFtaWx5X25hbWUiOiJNb250aSIsIm5iZiI6MTY3MDI5MjU4OSwiZXhwIjoxNjcwMjk2MTg5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdCIsImF1ZCI6ImFnZW5kYWFwaSJ9.wuebD_ekS7wwYUi_ks-y0xqOxqp8mZs3lCPaaErhFm4'
+    })
+  };
+  
+  public async Conectar(){
+ 
+    const res = await fetch('https://localhost:7924/api/Contact', {      
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6Ik1hdGVvIiwiZmFtaWx5X25hbWUiOiJNb250aSIsIm5iZiI6MTY3MDI5MjU4OSwiZXhwIjoxNjcwMjk2MTg5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdCIsImF1ZCI6ImFnZW5kYWFwaSJ9.wuebD_ekS7wwYUi_ks-y0xqOxqp8mZs3lCPaaErhFm4'
+    },})
   }
     getSession(): ISession {
       const item: string = localStorage.getItem('session') || 'invalid';
@@ -42,7 +43,7 @@ export class AppComponent {
       return { expiresIn: '', token: '' };
     }
     
-    setUserId(id : string){//**************
+    setUserId(id : string){//******
       localStorage.setItem('Id', id);
     }
 

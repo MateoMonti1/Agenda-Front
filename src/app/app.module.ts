@@ -12,6 +12,9 @@ import { OkDeleteContactsComponent } from './public/pages/ok-delete-contacts/ok-
 import { OkContactComponent } from './public/pages/ok-contact/ok-contact.component';
 import { SignInComponent } from './public/pages/sign-in/sign-in.component';
 import { EditContactComponent } from './public/pages/edit-contact/edit-contact.component';
+import { ViewDispositivoComponent } from './public/pages/view-dispositivo/view-dispositivo.component';
+import { EditDispositivoComponent } from './public/pages/edit-dispositivo/edit-dispositivo.component';
+import { NewDispositivoComponent } from './public/pages/new-dispositivo/new-dispositivo.component';
 
 
 @NgModule({
@@ -24,6 +27,7 @@ import { EditContactComponent } from './public/pages/edit-contact/edit-contact.c
      NewContactsComponent,
      OkDeleteContactsComponent,
      OkContactComponent,
+     
   ],
   imports: [
     BrowserModule,
