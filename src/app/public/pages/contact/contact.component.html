@@ -15,9 +15,11 @@
 
   <section class="flex-container">
       
-    <button class="box"> Nombre: {{ contact.first_name}} </button>
+    <button class="box"> Nombre: {{contact.first_name}} </button>
     <button class="box"> Apellido: {{contact.last_name}} </button>
-    <button class="box"> <img src="../assets/img/Dispositive.png" alt="" class="img2"> Dispositivos </button>
+    <button class="box"> <img src="../assets/img/Telephone.png" alt="" class="img2"> Teléfono: {{contact.phone1}} </button>
+    <button class="box"> <img src="../assets/img/Dispositive.png" alt="" class="img2"> Dispositivo: {{contact.type}} </button>
+    <button class="box"> <img src="../assets/img/Description.png" alt="" class="img2"> Descripción: {{contact.description}} </button>
     
 
   </section>

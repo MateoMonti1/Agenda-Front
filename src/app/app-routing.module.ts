@@ -22,11 +22,6 @@ const routes: Routes = [
           loadChildren: () => import('./public/pages/new-contacts/new-contacts.module').then(m => m.NewContactsModule)
       
           },
-          {
-            path:"delete",
-            loadChildren: () => import('./public/pages/delete-contacts/delete-contacts.module').then(m => m.DeleteContactsModule)
-        
-            },
             {
               path:"sign-in",
               loadChildren: () => import('./public/pages/sign-in/sign-in.module').then(m => m.SignInModule)
