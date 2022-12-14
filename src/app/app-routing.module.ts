@@ -37,26 +37,6 @@ const routes: Routes = [
                 loadChildren: () => import('./public/pages/edit-contact/edit-contact.module').then(m => m.EditContactModule)
             
                 },
-                {
-                  path:"view-dispositivo",
-                  loadChildren: () => import('./public/pages/view-dispositivo/view-dispositivo.module').then(m => m.ViewDispositivoModule)
-              
-                  },
-                  {
-                    path:"edit-dispositivo",
-                    loadChildren: () => import('./public/pages/edit-dispositivo/edit-dispositivo.module').then(m => m.EditDispositivoModule)
-                
-                    },
-                    {
-                      path:"new-dispositivo",
-                      loadChildren: () => import('./public/pages/new-dispositivo/new-dispositivo.module').then(m => m.NewDispositivoModule)
-                  
-                      },
-                  
-                  
-              
-              
-
 ];
 
 @NgModule({
