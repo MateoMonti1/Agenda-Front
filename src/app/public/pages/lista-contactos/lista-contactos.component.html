@@ -7,5 +7,6 @@
         <h1 class="lista">Mis Contactos</h1>
   </H1></div>
   <section class="flex-container">
-      <button  class="button" [routerLink]="['/contacto',name_contacts.first_name]" *ngFor="let name_contacts of name_contacts"> {{name_contacts.first_name}} </button>
+      <button  class="button" [routerLink]="['/contacto',]" *ngFor="let contact of contactsData"{{}}
+      ></button> 
   </section>

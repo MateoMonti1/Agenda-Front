@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ContactosService } from 'src/app/core/services/contactos.service';
 
-import {Contact} from 'src/app/core/interfaces/contacts'
+import {Contact, ContactJsonPlaceholder} from 'src/app/core/interfaces/contacts'
 
 @Component({
   selector: 'app-lista-contactos',
@@ -10,17 +10,12 @@ import {Contact} from 'src/app/core/interfaces/contacts'
 })
 export class ListaContactosComponent implements OnInit {
 
-  
-  constructor(private _contactosServices:ContactosService) { }
+  contactsData:ContactJsonPlaceholder[] = [];
+
+  constructor(private cs:ContactosService) { }
 
 
-  @Input() contac : Contact = {
-    id= 0,
-    name = '',
-    user_id = 0,
-
-
-  }
+ 
 
 
   ngOnInit(): void {
@@ -31,7 +26,7 @@ export class ListaContactosComponent implements OnInit {
  async  GetContacts()
 
     {
-      this.contactsData = await this.cs.getContacts(agendaId); //rellena ContactData con todos los contactos de una agenda
+      this.contactsData = await this.cs.getContacts(); //rellena ContactData con todos los contactos de una agenda
     }
   
 }
