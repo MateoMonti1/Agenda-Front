@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ContactosService } from 'src/app/core/services/contactos.service';
 
-import {name_contacts, Name_Contact} from 'src/app/core/interfaces/contacts'
+import {Contact} from 'src/app/core/interfaces/contacts'
 
 @Component({
   selector: 'app-lista-contactos',
@@ -9,10 +10,28 @@ import {name_contacts, Name_Contact} from 'src/app/core/interfaces/contacts'
 })
 export class ListaContactosComponent implements OnInit {
 
-  name_contacts:Name_Contact[] = name_contacts;
-  constructor() { }
+  
+  constructor(private _contactosServices:ContactosService) { }
 
-  ngOnInit(): void {
+
+  @Input() contac : Contact = {
+    id= 0,
+    name = '',
+    user_id = 0,
+
+
   }
 
+
+  ngOnInit(): void {
+    this.GetContacts();
+  }
+  
+
+  GetContacts(){
+
+    this._contactosServices.GetContacts().subscribe(data =>{
+      this.contac.name= data
+    })
+  } 
 }
