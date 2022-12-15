@@ -28,10 +28,10 @@ export class ListaContactosComponent implements OnInit {
   }
   
 
-  GetContacts(){
+ async  GetContacts()
 
-    this._contactosServices.GetContacts().subscribe(data =>{
-      this.contac.name= data
-    })
-  } 
+    {
+      this.contactsData = await this.cs.getContacts(agendaId); //rellena ContactData con todos los contactos de una agenda
+    }
+  
 }

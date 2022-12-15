@@ -12,8 +12,8 @@ export class ContactosService {
   constructor(private http: HttpClient) { }
 
 
-  GetContacts (): Observable<Contact[]>{
-
-   return this.http.get<Contact[]>(BACKEND_URL+'api/Contact')
-  }
+  async getContacts(): Promise<Contact[]> {
+    const data = await fetch(BACKEND_URL+'api/Contact');
+    return await data.json();
+}
 }
