@@ -8,9 +8,8 @@ export interface Contact{
 export interface ContactJsonPlaceholder {
   id?: number;
   name?: string;
-  username?: string;
-  email?: string;
+  dispositivos: [];
+  userId: number;
   
-  dispositivo?: string;
-  
+
 }
