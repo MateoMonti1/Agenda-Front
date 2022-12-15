@@ -1,18 +1,21 @@
 <section class="flex-container">
     <div id="container-form">
         <h1 class = "lines-effect">Contacts</h1>
-        <form #form="ngForm">
+        <form (ngSubmit)="login(form)" #form="ngForm" >
             <div class="inputs">
-                <label for="email">Email</label>
-                <input class="box" type="email" name="email" id="email" autocomplete="email" placeholder="Type your email address">
+                <label for="email"> UserName </label>
+                <input class="box"  name="userName" placeholder="Type your UserName "
+                [(ngModel)]="authData.userName " #userName="ngModel">
             </div>
                 <div class="inputs">
                 <label for="password">Password</label>
-                <input class="box" type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your password">
+                <input class="box" type="password" name="password" id="password" autocomplete="current-password" placeholder="Type your password"
+                [(ngModel)]="authData.password" [required]="true"  #password="ngModel"
+                >
             </div>
         
             <div class="but">
-                <button type="submit" [routerLink]="['lista-contactos']">Log In</button>
+                <button type="submit" [disabled]="form.invalid">Log In</button>
                 <button type="button" [routerLink]="['sign-in']">Sign In</button>
               </div>
         </form>

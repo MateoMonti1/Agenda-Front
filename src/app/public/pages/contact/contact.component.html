@@ -1,9 +1,9 @@
 <div class="fondo"> 
   <H1> 
     <div class="imgsleft">
-        <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+        <!-- <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a> -->
         <a class="button" (click)="borrar.showModal()"><img src="../assets/img/delete.png" alt=""></a>
-        <a class="button" [routerLink]="['/edit-contact']" class="undo"><img src="../assets/img/Edit.png" alt=""></a>
+        <!-- <a class="button" [routerLink]="['/edit-contact']" class="undo"><img src="../assets/img/Edit.png" alt=""></a> -->
     </div>
 
     <div class="lista">Datos Completos</div>
@@ -15,11 +15,11 @@
 
   <section class="flex-container">
       
-    <button class="box"> Nombre: {{contact.first_name}} </button>
-    <button class="box"> Apellido: {{contact.last_name}} </button>
-    <button class="box"> <img src="../assets/img/Telephone.png" alt="" class="img2"> Teléfono: {{contact.phone1}} </button>
-    <button class="box"> <img src="../assets/img/Dispositive.png" alt="" class="img2"> Dispositivo: {{contact.type}} </button>
-    <button class="box"> <img src="../assets/img/Description.png" alt="" class="img2"> Descripción: {{contact.description}} </button>
+    <button class="box"> Nombre:  </button>
+    <button class="box"> Apellido:  </button>
+    <button class="box"> <img src="../assets/img/Telephone.png" alt="" class="img2"> Teléfono:  </button>
+    <button class="box"> <img src="../assets/img/Dispositive.png" alt="" class="img2"> Dispositivo:  </button>
+    <button class="box"> <img src="../assets/img/Description.png" alt="" class="img2"> Descripción:  </button>
     
 
   </section>
@@ -27,6 +27,6 @@
   <dialog #borrar type="modal">
     <p>¿Desea borrar el contacto?</p>
   <div>
-    <button class="button" [routerLink]="['/lista-contactos']">Si</button>
-    <button class="button" [routerLink]="['/contacto']">No</button>
+    <!-- <button class="button" [routerLink]="['/lista-contactos']">Si</button> -->
+    <!-- <button class="button" [routerLink]="['/contacto']">No</button> -->
   </div>

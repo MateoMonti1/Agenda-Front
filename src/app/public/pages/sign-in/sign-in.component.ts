@@ -17,16 +17,7 @@ export class SignInComponent implements OnInit {
   }
 
   
-  authData:iAuthRequest = {
-    Username : "",
-    password : ""
-  };
-
-
-  async login(form:NgForm){
-    console.log(form.value);
-    const token = await this.auth.login(form.value);
-    if(token) this.router.navigate(['/lista-contactos']); 
-  }
+ 
+  
 
 }

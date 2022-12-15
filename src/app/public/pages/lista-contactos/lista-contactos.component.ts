@@ -23,7 +23,7 @@ export class ListaContactosComponent implements OnInit {
   }
   
 
- async  GetContacts()
+ async  GetContacts ()  
 
     {
       this.contactsData = await this.cs.getContacts(); //rellena ContactData con todos los contactos de una agenda
