@@ -11,30 +11,30 @@ import { ContactosService } from 'src/app/core/services/contactos.service';
 })
 export class NewContactsComponent implements OnInit {
 
-  // contactData:ContactJsonPlaceholder = {
-  //   name: '',
-  //   dispositivos: [],
+  contactData:ContactJsonPlaceholder = {
+    name: '',
+    lastname:'',
+    telephone:0,
+    dispositivos: [],
+    description:'',
+  };
+
+
+  constructor(private cs : ContactosService, private router:Router, private ar:ActivatedRoute) { }  //private Cc: ContactCardComponent
+
+
+   ngOnInit(): void {
+    this.ar.params.subscribe(params =>{const sub: any = params['id'] || null;
     
-   
-    
-  // };
+  });
+  
+  }
 
-
-  // constructor(private cs : ContactosService, private router:Router, private ar:ActivatedRoute) { }  //private Cc: ContactCardComponent
-
-
-   ngOnInit(): void {}
-  //   this.ar.params.subscribe(params =>{const sub: any = params['id'] || null;
-    
-  // });
-  // }
-
-
-  // async newcontact(form:NgForm){ /***************** */
-  // console.log(form.value);
-  // const contactocreado = this.cs.addContact(this.contactData); //ejectua addContact del contact service con los valores del form
-  // this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-  // }
+  async newcontact(form:NgForm) { 
+  console.log(form.value);
+  const contactocreado = this.cs.addContact(this.contactData); //ejectua addContact del contact service con los valores del form
+  this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+  }
 
 
 }

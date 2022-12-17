@@ -1,13 +1,14 @@
-
-<div class="fondo"> 
-  <H1> <div class="imgs">
-        <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-        <a class="button" [routerLink]="['/new']" class="add"><img src="../assets/img/add_circle.png" alt=""></a> 
-      </div>
-        <h1 class="lista">Mis Contactos</h1>
-  </H1></div>
-  <section class="flex-container">
-      <div  class="button" [routerLink]="['/contacto',]"*ngFor="let contact of contactsData">
-      Nombre: {{contact.name}}
-      </div> 
-  </section>
+<div class="fondo">
+  <H1>
+    <div class="imgs">
+      <a class="button" [routerLink]="['']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+      <a class="button" [routerLink]="['/new']" class="add"><img src="../assets/img/add_circle.png" alt=""></a>
+    </div>
+    <h1 class="lista">Mis Contactos</h1>
+  </H1>
+</div>
+<section class="flex-container">
+  <div class="button" [routerLink]="['/contacto']" *ngFor="let contact of contactsData">
+    Nombre: {{contact.name}}
+  </div>
+</section>

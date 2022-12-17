@@ -1,15 +1,14 @@
 export interface Contact{
- id: number,
-  name: string,
- user_id:number,
+id: number,
+name: string,
+user_id:number,
   
 }
 
 export interface ContactJsonPlaceholder {
-  id?: number;
   name?: string;
+  lastname: string;
+  telephone: number;
   dispositivos: [];
-  userId: number;
-  
-
+  description: string;
 }

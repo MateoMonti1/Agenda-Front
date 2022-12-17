@@ -1,36 +1,55 @@
-<div class="fondo"> 
-  <H1> 
+<div class="fondo">
+  <div id="flex-container">
+
+    <section class="titulo">
+      <h1>Nuevo Contacto</h1>
+    </section>
+    
     <div class="imgs">
-        <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-        <a class="button" class="done" (click)="agregar.showModal()"><img src="../assets/img/Done.png" alt=""></a> 
+      <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
     </div>
 
-        
-        <div class="lista">Nuevo Contacto</div>
-    
-  </H1></div>
-  <section class="container"><div class="account">
-    <img src="../assets/img/account.png" alt="" class="img">  </div></section>
+    <section id="ingresos">
+      <div class="container">
 
+        <form (ngSubmit)="newcontact(form)" #form="ngForm">
 
-  <section class="flex-container">
-    <!-- <form (ngSubmit)="newcontact(form)" #form="ngForm"> -->
-    <div class="box"> Nombre: <input type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
-       ></div>
-    <div class="box">Apellido: <input class="cont_input" type="text"  placeholder="Type your last name"></div>
-    <div class="box"><img src="../assets/img/Telephone.png" type="tel" alt="" class="img2"> Teléfono: <input class="cont_input" type="text" placeholder="Type your telephone"> </div>
-    <button class="box"><img src="../assets/img/Dispositive.png" alt="" class="img2">Dispositivo:<select class="cont_input" name="tipo" id="tipo">
-      <option value="Celular" selected>Celular</option>
-      <option value="Teléfono">Teléfono</option>
-      <option value="Fax">Fax</option>
-    </select>
-    </button>
-    <div class="box"><img src ="../assets/img/Description.png" alt="" class="img2">Descripción: <input class="cont_input" type="email" placeholder="Type your description"> </div>
-    <!-- </form> -->
-  </section>
+          <div class="inputs">
+            <label for="nombre">Nombre:</label>
+            <input class="cont_input" type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
+            [(ngModel)]="contactData.name" #nombre="ngModel" [maxlength]="15">
+          </div>
 
+          <div class="inputs">
+            <label for="apellido">Apellido:</label>
+            <input class="cont_input" type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
+            [(ngModel)]="contactData.lastname"   #apellido="ngModel" [maxlength]="15">
+          </div>
 
-  <dialog #agregar type="modal">
-    <p>CONTACTO AGREGADO CORRECTAMENTE</p>
-    <button [routerLink]="['/lista-contactos']">VOLVER A MIS CONTACTOS</button>
-  </dialog>
+          <div class="inputs">
+            <label for="telefono">Teléfono:</label>
+            <input class="cont_input" type="cel" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
+            [(ngModel)]="contactData.telephone"   #telefono="ngModel" [maxlength]="15">
+          </div>
+
+          <div class="inputs">
+            <label for="dispositivo">Dispositivo:</label>
+            <input class="cont_input" name="dispositivo" id="dispositivo" autocomplete="dispositivo" placeholder="Ingrese el dispositivo"
+            [(ngModel)]="contactData.dispositivos"   #mail="ngModel" [maxlength]="30">
+          </div>
+
+          <div class="inputs">
+            <label for="descripcion">Descripción:</label>
+            <input class="cont_input" type="descripcion" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
+            [(ngModel)]="contactData.description" #nombre="ngModel" [maxlength]="15">
+          </div>
+
+          <div>
+            <button class="inputs2" type="submit" [disabled]="form.invalid">Guardar Contacto</button>
+            <!-- <button type="submit" >Cargar</button> -->
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>

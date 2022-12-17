@@ -18,7 +18,7 @@ export class ContactosService {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}` ////******************* */
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
       },
     });
     return await data.json();
@@ -26,7 +26,7 @@ export class ContactosService {
 
 async addContact(contact: ContactJsonPlaceholder) : Promise<ContactJsonPlaceholder>{ //: Promise<ContactJsonPlaceholder>
   console.log(contact);
-  const res = await fetch(BACKEND_URL+'/api/Contacto', {
+  const res = await fetch(BACKEND_URL+'/api/Contact', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
