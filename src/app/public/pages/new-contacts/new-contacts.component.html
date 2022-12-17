@@ -12,44 +12,70 @@
     <section id="ingresos">
       <div class="container">
 
+        <!--
+
+        
+
         <form (ngSubmit)="newcontact(form)" #form="ngForm">
 
           <div class="inputs">
             <label for="nombre">Nombre:</label>
             <input class="cont_input" type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
-            [(ngModel)]="contactData.name" #nombre="ngModel" [maxlength]="15">
-          </div>
-
-          <div class="inputs">
-            <label for="apellido">Apellido:</label>
-            <input class="cont_input" type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
-            [(ngModel)]="contactData.lastname"   #apellido="ngModel" [maxlength]="15">
+            [(ngModel)]="contactData2.name" #nombre="ngModel" [maxlength]="15">
           </div>
 
           <div class="inputs">
             <label for="telefono">Teléfono:</label>
             <input class="cont_input" type="cel" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
-            [(ngModel)]="contactData.telephone"   #telefono="ngModel" [maxlength]="15">
-          </div>
-
-          <div class="inputs">
-            <label for="dispositivo">Dispositivo:</label>
-            <input class="cont_input" name="dispositivo" id="dispositivo" autocomplete="dispositivo" placeholder="Ingrese el dispositivo"
-            [(ngModel)]="contactData.dispositivos"   #mail="ngModel" [maxlength]="30">
+            [(ngModel)]="contactData2.dispositivos"   #telefono="ngModel" [maxlength]="15">
           </div>
 
           <div class="inputs">
             <label for="descripcion">Descripción:</label>
             <input class="cont_input" type="descripcion" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
-            [(ngModel)]="contactData.description" #nombre="ngModel" [maxlength]="15">
+            [(ngModel)]="dispositivos.description" #description="ngModel" [maxlength]="15">
           </div>
+
+          <div class="inputs">
+            <label for="descripcion">TipoDispositivo:</label>
+            <input class="cont_input" type="text" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
+            [(ngModel)]="dispositivos.type" #type="ngModel" [maxlength]="15">
+          </div>
+
+          <div class="inputs">
+            <label for="descripcion">Id:</label>
+            <input class="cont_input" type="descripcion" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
+            [(ngModel)]="contactData2.userId" #userId="ngModel" [maxlength]="15">
+          </div>
+           
 
           <div>
             <button class="inputs2" type="submit" [disabled]="form.invalid">Guardar Contacto</button>
-            <!-- <button type="submit" >Cargar</button> -->
+            
           </div>
         </form>
       </div>
     </section>
+  
+
   </div>
+  -->
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" ngModel required><br>
+    
+    <label for="num">Number:</label><br>
+    <input type="text" id="numb" name="dispositivos.num" ngModel required><br>
+    
+    <label for="description">Description:</label><br>
+    <input type="text" id="description" name="dispositivos.description" ngModel required><br>
+    
+    <label for="type">Type:</label><br>
+    <input type="number" id="type" name="dispositivos.type" ngModel required><br>
+    
+    <label for="userId">User ID:</label><br>
+    <input type="number" id="userId" name="userId" ngModel required><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
 </div>

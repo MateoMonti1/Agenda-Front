@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 import { AuthService } from './authentication.service';
 
 import { BACKEND_URL } from '../constants/backends';
-import { Contact, ContactJsonPlaceholder } from '../interfaces/contacts';
+import { Contact, ContactJsonPlaceholder} from '../interfaces/contacts';
+import { DispositiveJsonPlaceholder } from '../interfaces/dispositive.interface';
+//import { IContact } from '../interfaces/contact.interface';
+import { IContact } from '../interfaces/contact2';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +27,7 @@ export class ContactosService {
     return await data.json();
 }
 
-async addContact(contact: ContactJsonPlaceholder) : Promise<ContactJsonPlaceholder>{ //: Promise<ContactJsonPlaceholder>
+async addContact(contact: IContact) : Promise<IContact>{ //: Promise<ContactJsonPlaceholder>
   console.log(contact);
   const res = await fetch(BACKEND_URL+'/api/Contact', {
     method: 'POST',

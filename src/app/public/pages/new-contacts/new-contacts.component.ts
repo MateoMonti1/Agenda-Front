@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ContactJsonPlaceholder } from 'src/app/core/interfaces/contacts';  
+//import { IContact } from 'src/app/core/interfaces/contact.interface';
+import { IContact } from 'src/app/core/interfaces/contact2';
+import { IDispositivos } from 'src/app/core/interfaces/dispositivos';
+import { ContactJsonPlaceholder } from 'src/app/core/interfaces/contacts';
+import { DispositiveJsonPlaceholder } from 'src/app/core/interfaces/dispositive.interface';
 import { ContactosService } from 'src/app/core/services/contactos.service';
 
 @Component({
@@ -13,13 +17,34 @@ export class NewContactsComponent implements OnInit {
 
   contactData:ContactJsonPlaceholder = {
     name: '',
-    lastname:'',
-    telephone:0,
-    dispositivos: [],
-    description:'',
+    userID: 0
   };
 
+  dispositivo : IDispositivos = 
+  {
+    num : "1",
+    description : "hola",
+    type: 0
 
+  }
+
+  contactData2:IContact = {
+    name: '',
+    dispositivos: {
+      num : "1",
+      description : "hola",
+      type: 0
+  
+    },
+    userId: 0
+  };
+
+  dispositiveData: DispositiveJsonPlaceholder = {
+    TelephoneNumber:'',
+    DescriptionType: '',
+    Type: 0
+  };
+  
   constructor(private cs : ContactosService, private router:Router, private ar:ActivatedRoute) { }  //private Cc: ContactCardComponent
 
 
@@ -29,12 +54,42 @@ export class NewContactsComponent implements OnInit {
   });
   
   }
-
+/*
   async newcontact(form:NgForm) { 
-  console.log(form.value);
-  const contactocreado = this.cs.addContact(this.contactData); //ejectua addContact del contact service con los valores del form
-  this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+  console.log(form.value, "valor formulario");
+  const descipcion = form.value.descipcion;
+  const tipo = form.value.tipo;
+  const n2 = form.value.TelephoneNumber
+  const dispositivo: IDispositivos = {
+    number : n2,
+    description : descipcion,
+    type: tipo
   }
 
+  const contacto : IContact = {
+      name:form.value.
+      dispositivos: dispositivo,
+      userId: form.value.userId
+  }
+  const contactocreado = await this.cs.addContact(contacto); //ejectua addContact del contact service con los valores del form
+  this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+  }
+  */
 
+  async onSubmit(form: NgForm) {
+    const formValue = form.value;
+    const contactData: IContact = {
+      name: formValue.name,
+      dispositivos: {
+        num: formValue.dispositivos.num,
+        description: formValue.dispositivos.description,
+        type: formValue.dispositivos.type,
+      },
+      userId: formValue.userId,
+    };
+
+    const contactocreado = await this.cs.addContact(contactData); //ejectua addContact del contact service con los valores del form
+    this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+    console.log(contactData);
+  }
 }
