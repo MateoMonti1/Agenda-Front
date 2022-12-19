@@ -1,6 +1,6 @@
-export interface IDispositivos {
-    num : string,
+export interface IDispositivo {
+    number : string,
     description : string,
-    type: 0
+    type: number
   }
   

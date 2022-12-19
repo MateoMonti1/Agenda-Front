@@ -8,7 +8,7 @@
   </H1>
 </div>
 <section class="flex-container">
-  <div class="button" [routerLink]="['/contacto']" *ngFor="let contact of contactsData">
-    Nombre: {{contact.name}}
+  <div class="button" [routerLink]="['/contacto',contact.id]" *ngFor="let contact of contactsData">
+    {{contact.name}}
   </div>
 </section>

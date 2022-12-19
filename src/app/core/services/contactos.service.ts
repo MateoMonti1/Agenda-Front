@@ -38,4 +38,18 @@ async addContact(contact: IContact) : Promise<IContact>{ //: Promise<ContactJson
     body: JSON.stringify(contact)
   });
   return await res.json();
-}}
+}
+ 
+async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
+  const data = await fetch(BACKEND_URL+'/api/Contact/'+ id,{
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+    },
+  });
+  return await data.json();
+}
+
+}
+

@@ -8,7 +8,11 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+   ContactComponent
     
+  ],
+  exports: [
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -17,3 +21,4 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class ContactModule { }
+

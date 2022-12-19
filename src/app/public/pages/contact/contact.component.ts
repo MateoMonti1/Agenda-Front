@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contact } from 'src/app/core/interfaces/contacts';
+import { Contact, ContactJsonPlaceholder } from 'src/app/core/interfaces/contacts';
 import { ContactosService } from 'src/app/core/services/contactos.service';
+
 
 @Component({
   selector: 'app-contact',
@@ -9,15 +10,28 @@ import { ContactosService } from 'src/app/core/services/contactos.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  
-  constructor(private ar:ActivatedRoute, private _contactosServices:ContactosService) { }
 
- 
+  constructor(private route:ActivatedRoute, private cs:ContactosService) { }
 
   ngOnInit(): void {
     
-    
+    this.route.params
+      .subscribe(params => {
+        console.log(params['id'])
+        this.GetData(params['id']); 
+      }
+    );
   }
 
+  contact: ContactJsonPlaceholder = {
+    name: '',
+    userID: 0,
+    id: 0,
+    dispositivos: [{number: '6565',description: 'casa',type: 1}]
+  }
   
+  async GetData(id: number)
+  {
+    this.contact = await this.cs.getContactDetails(id);
+  }
 }

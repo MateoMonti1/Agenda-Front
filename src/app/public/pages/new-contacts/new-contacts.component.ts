@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 //import { IContact } from 'src/app/core/interfaces/contact.interface';
 import { IContact } from 'src/app/core/interfaces/contact2';
-import { IDispositivos } from 'src/app/core/interfaces/dispositivos';
+import { IDispositivo } from 'src/app/core/interfaces/dispositivos';
 import { ContactJsonPlaceholder } from 'src/app/core/interfaces/contacts';
 import { DispositiveJsonPlaceholder } from 'src/app/core/interfaces/dispositive.interface';
 import { ContactosService } from 'src/app/core/services/contactos.service';
@@ -17,27 +17,18 @@ export class NewContactsComponent implements OnInit {
 
   contactData:ContactJsonPlaceholder = {
     name: '',
-    userID: 0
+    userID: 0,
+    id: 0,
+    dispositivos: []
   };
 
-  dispositivo : IDispositivos = 
+  dispositivo : IDispositivo = 
   {
-    num : "1",
+    number : "1",
     description : "hola",
     type: 0
 
   }
-
-  contactData2:IContact = {
-    name: '',
-    dispositivos: {
-      num : "1",
-      description : "hola",
-      type: 0
-  
-    },
-    userId: 0
-  };
 
   dispositiveData: DispositiveJsonPlaceholder = {
     TelephoneNumber:'',
@@ -80,14 +71,14 @@ export class NewContactsComponent implements OnInit {
     const formValue = form.value;
     const contactData: IContact = {
       name: formValue.name,
-      dispositivos: {
-        num: formValue.dispositivos.num,
-        description: formValue.dispositivos.description,
-        type: formValue.dispositivos.type,
-      },
-      userId: formValue.userId,
+      dispositivos: [{
+        number: formValue.num,
+        description: formValue.description,
+        type: formValue.type,
+      }],
+      userId: formValue.userId
     };
-
+    console.log(contactData)
     const contactocreado = await this.cs.addContact(contactData); //ejectua addContact del contact service con los valores del form
     this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
     console.log(contactData);

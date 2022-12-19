@@ -1,8 +1,8 @@
 
-import { IDispositivos } from "./dispositivos";
+import { IDispositivo } from "./dispositivos";
 
 export interface IContact {
     name: string,
-    dispositivos: IDispositivos,
+    dispositivos: IDispositivo[],
     userId?: number,
   }
