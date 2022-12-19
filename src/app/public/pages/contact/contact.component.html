@@ -27,6 +27,6 @@
   <dialog #borrar type="modal">
     <p>¿Desea borrar el contacto?</p>
   <div>
-    <button class="button" [routerLink]="['/lista-contactos']">Si</button>
+    <button (click)="deleteContacto(contact.id)" class="button" [routerLink]="['/lista-contactos']">Si</button>
     <button class="button" [routerLink]="['/contacto']">No</button>
   </div>

@@ -2,7 +2,7 @@ import { IDispositivo } from "./dispositivos";
 
 export interface Contact{
   name?: string;
-  userID: number,
+  userID?: number,
   id: number,
   dispositivos: IDispositivo[]
   
@@ -10,7 +10,7 @@ export interface Contact{
 
 export interface ContactJsonPlaceholder {
   name?: string;
-  userID: number,
+  userID?: number,
   id: number,
   dispositivos: IDispositivo[]
 }

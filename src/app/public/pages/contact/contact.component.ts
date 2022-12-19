@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
     this.route.params
       .subscribe(params => {
         console.log(params['id'])
-        this.GetData(params['id']); 
+        this.getData(params['id']); 
       }
     );
   }
@@ -30,8 +30,12 @@ export class ContactComponent implements OnInit {
     dispositivos: [{number: '6565',description: 'casa',type: 1}]
   }
   
-  async GetData(id: number)
+  async getData(id: number)
   {
     this.contact = await this.cs.getContactDetails(id);
+  }
+
+  async deleteContacto(id : number): Promise<void>{ 
+    await this.cs.deleteContact(id);
   }
 }

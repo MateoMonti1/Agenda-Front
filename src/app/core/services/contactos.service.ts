@@ -51,5 +51,16 @@ async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
   return await data.json();
 }
 
+async deleteContact(id:number):Promise<boolean>{
+  const res = await fetch(BACKEND_URL+'/api/Contact/'+id, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+    },
+  });
+  return res.ok;
+}
+
 }
 
