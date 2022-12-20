@@ -17,6 +17,10 @@ export class NewContactsComponent implements OnInit {
 
   input1Value = '';
   showInputs = false;
+  showInput = false;
+  toggleInput() {
+    this.showInput = !this.showInput;
+  }
 
   contactData:ContactJsonPlaceholder = {
     name: '',
@@ -27,8 +31,8 @@ export class NewContactsComponent implements OnInit {
 
   dispositivo : IDispositivo = 
   {
-    number : "1",
-    description : "hola",
+    number : "0",
+    description : "0",
     type: 0
 
   }

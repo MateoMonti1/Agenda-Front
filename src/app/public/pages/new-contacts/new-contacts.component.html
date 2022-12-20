@@ -3,7 +3,7 @@
     <div class="imgs">
 
       <a id="flecha" class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-      <a class="button" class="add">✆<img src="../assets/img/add_circle.png" alt=""></a>
+      <a class="button" class="add" (click)="toggleInput()">✆<img src="../assets/img/add_circle.png" alt=""></a>
     
     </div>
         <div 
@@ -29,6 +29,11 @@
         <div class="box">
         <label for="num"><img src="../assets/img/Dispositivo.png" class="img2">Teléfono 1:</label>
         <input class="cont_input" type="text" id="num" name="num" ngModel required [(ngModel)]="input1Value" (input)="showInputs = true"><br>
+      </div>
+
+      <div *ngIf="showInput" class="box">
+        <label for="num"><img src="../assets/img/Dispositivo.png" class="img2">Teléfono 2:</label>
+        <input class="cont_input" type="text" id="num" name="num" ngModel required><br>
       </div>
 
      <div *ngIf="showInputs" class="inputs-container">
