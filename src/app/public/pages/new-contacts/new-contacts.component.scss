@@ -14,59 +14,41 @@
   border-radius: 15px;
 }
 
-.inputs {
+.button {
   width: 428px;
   height: 78px;
-  left: 10px;
+  left: 0px;
   top: 385px;
+  background: #42275a(50, 207, 207);
+  border: 1px solid #42275a(50, 207, 207);
+  box-shadow: 0px 3px 0px #000000;
   text-align: center;
+  padding-top: 35px;
   min-width: 150px;
   padding: 15px 10px;
   margin: 20px;
   background: rgb(214, 214, 214);
   border: none;
   border-radius: 25px;
-  font-size: 15px;
+  color: #42275a(50, 207, 207);
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   font-family: 'sans-serif';
   color: #5e5e5e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.inputs2 {
-  position: relative;
-  width: 428px;
-  height: 55px;
-  left: 30px;
-  top: 20px;
-  font-family: 'sans-serif';
-  color: #5e5e5e;
-  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
-  7px 7px 20px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: rgb(214, 214, 214);
-}
-
-.titulo {
+.lista {
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 14px;
+  bottom: 35px;
   font-size: 50px;
   color: rgb(205, 205, 205);
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
   text-decoration: overline;
 }
 
@@ -80,57 +62,32 @@
 }
 
 .container {
-  position: relative;
-  top: -95px;
-  left: 415px;
+  display: flex;
+  width: auto;
+  height: auto;
+  left: auto;
+  top: auto;
   border:1px #42275a(50, 207, 207);
   font-size: 30px;
   align-items: center;
   justify-content: center;
   padding-right: 100px;
   padding-left: 100px;
-}
-
-.button:hover {
-  box-shadow: 0px 0px 0px;
-  padding: 7px;
+  position: relative;
+  bottom:35px;
  }
  
  .imgs {
   display: flex;
   justify-content: space-around;
   position: relative;
-  top: -125px;
-  right: 280px;
+  top: 50px;
   cursor: pointer;
   z-index: 100;
   filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
 }
 
-.img2 {
-  filter: invert(73%) sepia(13%) saturate(18%) hue-rotate(322deg) brightness(104%) contrast(107%);
-  height: 20px;
+#flecha {
   position: relative;
-  right: 25px;
-}
-
-.cont_input {
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
-  border: unset;
-  font-family: "Segoe UI";
-  font-size: 10px;
-  border-radius: 25px;
-  width: 125px;
-  opacity: 0.4;
-}
-
-dialog {
-  justify-content: center;
-  bottom: 14px;
-  font-size: 25px;
-  color: rgb(205, 205, 205);
-  font-family: 'sans-serif';
-  color: #5e5e5e;
+  right: 375px;
 }

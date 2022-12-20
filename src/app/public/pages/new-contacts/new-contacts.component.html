@@ -1,81 +1,43 @@
 <div class="fondo">
   <div id="flex-container">
 
-    <section class="titulo">
-      <h1>Nuevo Contacto</h1>
-    </section>
+    <H1>
+      <div class="imgs">
+        <a id="flecha" class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+      </div>
+      <h1 class="lista">Agregar Contacto</h1>
+    </H1>
     
-    <div class="imgs">
-      <a class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-    </div>
+
 
     <section id="ingresos">
       <div class="container">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
-        <!--
-
-        
-
-        <form (ngSubmit)="newcontact(form)" #form="ngForm">
-
-          <div class="inputs">
-            <label for="nombre">Nombre:</label>
-            <input class="cont_input" type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
-            [(ngModel)]="contactData2.name" #nombre="ngModel" [maxlength]="15">
+          <div class="button">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" ngModel required><br>
+          </div>
+          
+            <div class="button">
+            <label for="num">Teléfono:</label>
+            <input type="text" id="numb" name="num" ngModel required><br>
           </div>
 
-          <div class="inputs">
-            <label for="telefono">Teléfono:</label>
-            <input class="cont_input" type="cel" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
-            [(ngModel)]="contactData2.dispositivos"   #telefono="ngModel" [maxlength]="15">
+          <div class="button">
+            <label for="description">Descripción:</label>
+            <input type="text" id="description" name="description" ngModel required><br>
           </div>
-
-          <div class="inputs">
-            <label for="descripcion">Descripción:</label>
-            <input class="cont_input" type="descripcion" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
-            [(ngModel)]="dispositivos.description" #description="ngModel" [maxlength]="15">
+          
+          <div class="button">
+            <label for="type">TipoDispositivo:</label>
+            <input type="number" id="type" name="type" ngModel required><br>
           </div>
-
-          <div class="inputs">
-            <label for="descripcion">TipoDispositivo:</label>
-            <input class="cont_input" type="text" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
-            [(ngModel)]="dispositivos.type" #type="ngModel" [maxlength]="15">
-          </div>
-
-          <div class="inputs">
-            <label for="descripcion">Id:</label>
-            <input class="cont_input" type="descripcion" name="descripcion" id="descripcion" autocomplete="descripcion" placeholder="Ingrese la descripcion"
-            [(ngModel)]="contactData2.userId" #userId="ngModel" [maxlength]="15">
-          </div>
-           
 
           <div>
-            <button class="inputs2" type="submit" [disabled]="form.invalid">Guardar Contacto</button>
-            
+            <button class="button" type="submit">Submit</button>
           </div>
         </form>
       </div>
     </section>
-  
-
   </div>
-  -->
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" ngModel required><br>
-    
-    <label for="num">Number:</label><br>
-    <input type="text" id="numb" name="num" ngModel required><br>
-    
-    <label for="description">Description:</label><br>
-    <input type="text" id="description" name="description" ngModel required><br>
-    
-    <label for="type">Type:</label><br>
-    <input type="number" id="type" name="type" ngModel required><br>
-    
-    <label for="userId">User ID:</label><br>
-    <input type="number" id="userId" name="userId" ngModel required><br><br>
-    
-    <button type="submit">Submit</button>
-  </form>
-</div>
