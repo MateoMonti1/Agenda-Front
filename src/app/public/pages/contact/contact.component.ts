@@ -15,35 +15,35 @@ export class ContactComponent implements OnInit {
   constructor(private route:ActivatedRoute, private cs:ContactosService) { }
 
   ngOnInit(): void {
-    
+
     this.route.params
       .subscribe(params => {
         console.log(params['id'])
-        this.getData(params['id']); 
+        this.getData(params['id']);
       }
     );
   }
 
-  contact: ContactJsonPlaceholder = {
-    name: '',
-    userID: 0,
-    id: 0,
-    dispositivos: []
-  }
-
-  dispositivo : IDispositivo = 
+  dispositivo : IDispositivo =
   {
     number : "",
     description : "",
     type: 0
   }
-  
+  contact: ContactJsonPlaceholder = {
+    name: '',
+    userID: 0,
+    id: 0,
+    dispositivos: [{...this.dispositivo},{...this.dispositivo}]
+  }
+
+
   async getData(id: number)
   {
     this.contact = await this.cs.getContactDetails(id);
   }
 
-  async deleteContacto(id : number): Promise<void>{ 
+  async deleteContacto(id : number): Promise<void>{
     await this.cs.deleteContact(id);
   }
 }
