@@ -1,43 +1,53 @@
-<div class="fondo">
-  <div id="flex-container">
+<div class="fondo"> 
+  <H1> 
+    <div class="imgs">
 
-    <H1>
-      <div class="imgs">
-        <a id="flecha" class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-      </div>
-      <h1 class="lista">Agregar Contacto</h1>
-    </H1>
+      <a id="flecha" class="button" [routerLink]="['/lista-contactos']" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
+      <a class="button" class="add">✆<img src="../assets/img/add_circle.png" alt=""></a>
     
+    </div>
+        <div 
+        class="lista">Agregar Contacto</div>
+  </H1>
+        </div>
+
+  <section class="container"><div class="account">
+    <img src="../assets/img/account.png" alt="" class="img">  </div>
+  </section>
 
 
-    <section id="ingresos">
-      <div class="container">
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-
-          <div class="button">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" ngModel required><br>
-          </div>
-          
-            <div class="button">
-            <label for="num">Teléfono:</label>
-            <input type="text" id="numb" name="num" ngModel required><br>
-          </div>
-
-          <div class="button">
-            <label for="description">Descripción:</label>
-            <input type="text" id="description" name="description" ngModel required><br>
-          </div>
-          
-          <div class="button">
-            <label for="type">TipoDispositivo:</label>
-            <input type="number" id="type" name="type" ngModel required><br>
-          </div>
-
-          <div>
-            <button class="button" type="submit">Submit</button>
-          </div>
-        </form>
+  <section class="flex-container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    
+    <div class="form-group">
+      
+      <div class="box">
+        <label for="name">Nombre:</label>
+        <input class="cont_input" type="text" id="name" name="name" ngModel required><br>
       </div>
-    </section>
-  </div>
+      
+        <div class="box">
+        <label for="num"><img src="../assets/img/Dispositivo.png" class="img2">Teléfono 1:</label>
+        <input class="cont_input" type="text" id="num" name="num" ngModel required [(ngModel)]="input1Value" (input)="showInputs = true"><br>
+      </div>
+
+     <div *ngIf="showInputs" class="inputs-container">
+
+      <div class="box">
+        <label for="num">Tipo de Dispositivo:</label>
+        <input class="cont_input" type="number" id="type" name="type" ngModel required><br>
+      </div>
+
+      <div class="box">
+        <label for="num">Descripción:</label>
+        <input class="cont_input" type="text" id="desc" name="description" ngModel required><br>
+      </div>
+
+     </div>
+    </div>
+      <div>
+        <button class="box" id="guardar" type="submit">Guardar Contacto</button>
+      </div>
+    </form>
+  </section>
+

@@ -15,6 +15,9 @@ import { ContactosService } from 'src/app/core/services/contactos.service';
 })
 export class NewContactsComponent implements OnInit {
 
+  input1Value = '';
+  showInputs = false;
+
   contactData:ContactJsonPlaceholder = {
     name: '',
     userID: 0,

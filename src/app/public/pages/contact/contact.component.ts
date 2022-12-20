@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Contact, ContactJsonPlaceholder } from 'src/app/core/interfaces/contacts';
+import { IDispositivo } from 'src/app/core/interfaces/dispositivos';
 import { ContactosService } from 'src/app/core/services/contactos.service';
 
 
@@ -27,7 +28,14 @@ export class ContactComponent implements OnInit {
     name: '',
     userID: 0,
     id: 0,
-    dispositivos: [{number: '6565',description: 'casa',type: 1}]
+    dispositivos: []
+  }
+
+  dispositivo : IDispositivo = 
+  {
+    number : "",
+    description : "",
+    type: 0
   }
   
   async getData(id: number)
