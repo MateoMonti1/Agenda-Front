@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { AuthService } from './authentication.service';
 
 import { BACKEND_URL } from '../constants/backends';
-import { Contact, ContactJsonPlaceholder} from '../interfaces/contacts';
 import { DispositiveJsonPlaceholder } from '../interfaces/dispositive.interface';
 //import { IContact } from '../interfaces/contact.interface';
 import { IContact } from '../interfaces/contact2';
@@ -16,7 +15,7 @@ export class ContactosService {
   constructor(private auth:AuthService) { }
 
 
-  async getContacts(): Promise <ContactJsonPlaceholder[]> {
+  async getContacts(): Promise <IContact[]> {
     const data = await fetch(BACKEND_URL+'/api/Contact',{
       method: 'GET',
       headers: {
@@ -27,20 +26,20 @@ export class ContactosService {
     return await data.json();
 }
 
-async addContact(contact: IContact) : Promise<IContact>{ //: Promise<ContactJsonPlaceholder>
-  console.log(contact);
+async addContact(contactData: IContact) : Promise<IContact>{ //: Promise<ContactJsonPlaceholder>
+  console.log(contactData);
   const res = await fetch(BACKEND_URL+'/api/Contact', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
       'Authorization' :  `Bearer ${this.auth.getSession().token!}`
     },
-    body: JSON.stringify(contact)
+    body: JSON.stringify(contactData)
   });
   return await res.json();
 }
  
-async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
+async getContactDetails(id: number): Promise<IContact> {
   const data = await fetch(BACKEND_URL+'/api/Contact/'+ id,{
     method: 'GET',
     headers: {

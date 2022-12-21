@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contact, ContactJsonPlaceholder } from 'src/app/core/interfaces/contacts';
+import { IContact } from 'src/app/core/interfaces/contact2';
 import { IDispositivo } from 'src/app/core/interfaces/dispositivos';
 import { ContactosService } from 'src/app/core/services/contactos.service';
 
@@ -30,9 +30,9 @@ export class ContactComponent implements OnInit {
     description : "",
     type: 0
   }
-  contact: ContactJsonPlaceholder = {
+  contact: IContact = {
     name: '',
-    userID: 0,
+    userId: 0,
     id: 0,
     dispositivos: [{...this.dispositivo},{...this.dispositivo}]
   }

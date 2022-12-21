@@ -7,11 +7,3 @@ export interface Contact{
   dispositivos: IDispositivo[]
   
 }
-
-export interface ContactJsonPlaceholder {
-  name?: string;
-  userID?: number,
-  id: number,
-  dispositivos: IDispositivo[]
-}
-

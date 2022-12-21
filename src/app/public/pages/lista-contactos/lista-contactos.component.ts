@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IContact } from 'src/app/core/interfaces/contact2';
 import { ContactosService } from 'src/app/core/services/contactos.service';
 
-import {Contact, ContactJsonPlaceholder} from 'src/app/core/interfaces/contacts'
+
 
 @Component({
   selector: 'app-lista-contactos',
@@ -10,7 +11,7 @@ import {Contact, ContactJsonPlaceholder} from 'src/app/core/interfaces/contacts'
 })
 export class ListaContactosComponent implements OnInit {
 
-  contactsData:ContactJsonPlaceholder[] = [];
+  contactsData:IContact[] = [];
 
   constructor(private cs:ContactosService) { }
 
