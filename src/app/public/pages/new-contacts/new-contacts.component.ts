@@ -53,32 +53,10 @@ export class NewContactsComponent implements OnInit {
       const sub: any = params['id'] || null;
     });
   }
-  /*
-  async newcontact(form:NgForm) {
-  console.log(form.value, "valor formulario");
-  const descipcion = form.value.descipcion;
-  const tipo = form.value.tipo;
-  const n2 = form.value.TelephoneNumber
-  const dispositivo: IDispositivos = {
-    number : n2,
-    description : descipcion,
-    type: tipo
-  }
-
-  const contacto : IContact = {
-      name:form.value.
-      dispositivos: dispositivo,
-      userId: form.value.userId
-  }
-  const contactocreado = await this.cs.addContact(contacto); //ejectua addContact del contact service con los valores del form
-  this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-  }
-  */
 
   async onSubmit(form: NgForm) {
     console.log(this.contactData);
     const contactocreado = await this.cs.addContact(this.contactData); //ejectua addContact del contact service con los valores del form
-    alert('se agrego el nuevo contacto');
     this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
   }
 }
