@@ -8,58 +8,65 @@ import { DispositiveJsonPlaceholder } from '../interfaces/dispositive.interface'
 import { IContact } from '../interfaces/contact2';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContactosService {
+  constructor(private auth: AuthService) {}
 
-  constructor(private auth:AuthService) { }
-
-
-  async getContacts(): Promise <IContact[]> {
-    const data = await fetch(BACKEND_URL+'/api/Contact',{
+  async getContacts(): Promise<IContact[]> {
+    const data = await fetch(BACKEND_URL + '/api/Contact', {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
       },
     });
     return await data.json();
-}
+  }
 
-async addContact(contactData: IContact) : Promise<IContact>{ //: Promise<ContactJsonPlaceholder>
-  console.log(contactData);
-  const res = await fetch(BACKEND_URL+'/api/Contact', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-      'Authorization' :  `Bearer ${this.auth.getSession().token!}`
-    },
-    body: JSON.stringify(contactData)
-  });
-  return await res.json();
-}
- 
-async getContactDetails(id: number): Promise<IContact> {
-  const data = await fetch(BACKEND_URL+'/api/Contact/'+ id,{
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json',
-      'Authorization' :  `Bearer ${this.auth.getSession().token!}`
-    },
-  });
-  return await data.json();
-}
+  async addContact(contactData: IContact) {
+    console.log(contactData);
+    const res = await fetch(BACKEND_URL + '/api/Contact', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
+      },
+      body: JSON.stringify(contactData),
+    });
+  }
 
-async deleteContact(id:number):Promise<boolean>{
-  const res = await fetch(BACKEND_URL+'/api/Contact/'+id, {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json',
-      'Authorization' :  `Bearer ${this.auth.getSession().token!}`
-    },
-  });
-  return res.ok;
-}
+  async getContactDetails(id: number): Promise<IContact> {
+    const data = await fetch(BACKEND_URL + '/api/Contact/' + id, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
+      },
+    });
+    return await data.json();
+  }
 
-}
+  async deleteContact(id: number): Promise<boolean> {
+    const res = await fetch(BACKEND_URL + '/api/Contact/' + id, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
+      },
+    });
+    return res.ok;
+  }
 
+  async editContact(contactData: IContact): Promise<boolean> {
+    let res = await fetch(BACKEND_URL + '/api/Contact/' + contactData.id, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${this.auth.getSession().token!}`,
+      },
+      body: JSON.stringify(contactData),
+    });
+    return res.ok;
+  }
+}

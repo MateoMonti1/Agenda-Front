@@ -1,34 +1,64 @@
-<div class="fondo"> 
-    <H1> 
-      <div class="imgs">
-          <a class="button" href="javascript: history.go(-1)" class="undo"><img src="../assets/img/arrow_back.png" alt=""></a>
-          <a class="button" class="done" (click)="agregar.showModal()"><img src="../assets/img/Done.png" alt=""></a> 
-      </div>
-  
-          
-          <div class="lista">Editar Contacto</div>
-      
-    </H1></div>
-    <section class="container"><div class="account">
-      <img src="../assets/img/account.png" alt="" class="img">  </div></section>
-  
-  
-    <section class="flex-container">
-      <button  class="box">Nombre: <input class="cont_input" type="text"  placeholder="Type your name"></button>
-      <button class="box">Apellido: <input class="cont_input" type="text"  placeholder="Type your last name"></button>
-      <button  class="box"><img src="../assets/img/Telephone.png" type="tel" alt="" class="img2"> Teléfono: <input class="cont_input" type="text" placeholder="Type your telephone"> </button>
-      <button class="box"><img src="../assets/img/Dispositive.png" alt="" class="img2">Dispositivo:<select class="cont_input" name="tipo" id="tipo">
-        <option value="Celular" selected>Celular</option>
-        <option value="Teléfono">Teléfono</option>
-        <option value="Fax">Fax</option>
-      </select>
-      </button>
-      <button class="box"><img src ="../assets/img/Description.png" alt="" class="img2">Descripción: <input class="cont_input" type="email" placeholder="Type your description"> </button>
-    </section>
-  
-  
-    <dialog #agregar type="modal">
-      <p>CONTACTO AGREGADO CORRECTAMENTE</p>
-      <button [routerLink]="['/lista-contactos']">VOLVER A MIS CONTACTOS</button>
-    </dialog>
-  
+<div class="fondo">
+  <H1>
+    <div class="imgs">
+      <a class="button"
+         href="javascript: history.go(-1)"
+         class="undo"><img src="../assets/img/arrow_back.png"
+             alt=""></a>
+      <a class="button"
+         class="done"
+         (click)="agregar.showModal()"><img src="../assets/img/Done.png"
+             alt=""></a>
+    </div>
+
+
+    <div class="lista">Editar Contacto</div>
+
+  </H1>
+</div>
+<section class="container">
+  <div class="account">
+    <img src="../assets/img/account.png"
+         alt=""
+         class="img">
+  </div>
+</section>
+
+
+<section class="flex-container">
+  <button class="box">Nombre: <input class="cont_input"
+           type="text"
+           placeholder="Type your name"></button>
+  <button class="box">Apellido: <input class="cont_input"
+           type="text"
+           placeholder="Type your last name"></button>
+  <button class="box"><img src="../assets/img/Telephone.png"
+         type="tel"
+         alt=""
+         class="img2"> Teléfono: <input class="cont_input"
+           type="text"
+           placeholder="Type your telephone"> </button>
+  <button class="box"><img src="../assets/img/Dispositive.png"
+         alt=""
+         class="img2">Dispositivo:<select class="cont_input"
+            name="tipo"
+            id="tipo">
+      <option value="Celular"
+              selected>Celular</option>
+      <option value="Teléfono">Teléfono</option>
+      <option value="Fax">Fax</option>
+    </select>
+  </button>
+  <button class="box"><img src="../assets/img/Description.png"
+         alt=""
+         class="img2">Descripción: <input class="cont_input"
+           type="email"
+           placeholder="Type your description"> </button>
+</section>
+
+
+<dialog #agregar
+        type="modal">
+  <p>CONTACTO AGREGADO CORRECTAMENTE</p>
+  <button [routerLink]="['/lista-contactos']">VOLVER A MIS CONTACTOS</button>
+</dialog>
