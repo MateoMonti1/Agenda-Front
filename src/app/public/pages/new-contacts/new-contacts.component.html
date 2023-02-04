@@ -33,6 +33,7 @@
     <div class="form-group">
 
       <div class="box">
+        <div class="textoinput">
         <label for="name">Nombre:</label>
         <input class="cont_input"
                type="text"
@@ -40,6 +41,7 @@
                name="name"
                [(ngModel)]="contactData.name"
                required><br>
+        </div>      
       </div>
 
       <div id="dispositivosContainer">
@@ -48,7 +50,8 @@
 
 
           <div class="box">
-            <label for="num"><img src="../assets/img/Dispositivo.png"
+            <div class="textoinput">
+            <label for="num"><img src=""
                    class="img2">Teléfono:</label>
             <input class="cont_input"
                    type="text"
@@ -56,10 +59,12 @@
                    name="num-{{i}}"
                    [(ngModel)]="contactData.dispositivos[i].number"
                    (input)="showInputs = true"><br>
+            </div>
           </div>
 
           <div class="box">
-            <label for="num">Tipo de Dispositivo: ({{typeDispositivo[dispositivo.type]}})</label>
+            <div class="textoinput">
+            <label for="num">Dispositivo: ({{typeDispositivo[dispositivo.type]}})</label>
             <input class="cont_input"
                    type="number"
                    id="type"
@@ -67,15 +72,18 @@
                    max="2"
                    name="type-{{i}}"
                    [(ngModel)]="contactData.dispositivos[i].type"><br>
+            </div>
           </div>
 
           <div class="box">
+            <div class="textoinput">
             <label for="num">Descripción:</label>
             <input class="cont_input"
                    type="text"
                    id="desc"
                    name="description-{{i}}"
                    [(ngModel)]="contactData.dispositivos[i].description"><br>
+            </div>
           </div>
         </div>
       </div>

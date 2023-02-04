@@ -15,8 +15,8 @@
 }
 
 .box {
-  width: 428px;
-  height: 78px;
+  width: 375px;
+  height: 65px;
   left: 0px;
   top: 385px;
   text-align: center;
@@ -37,6 +37,10 @@
   color: #5e5e5e;
 }
 
+.textoinput {
+  position: relative;
+  top: 25px;
+}
 
 .lista {
   display: flex;
@@ -136,7 +140,7 @@ dialog {
 
 .form-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .form-group .inputs-container {
