@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-//import { IContact } from 'src/app/core/interfaces/contact.interface';
 import { IContact } from 'src/app/core/interfaces/contact2';
 import { IDispositivo } from 'src/app/core/interfaces/dispositivos';
 import { DispositiveJsonPlaceholder } from 'src/app/core/interfaces/dispositive.interface';
@@ -25,8 +24,8 @@ export class NewContactsComponent implements OnInit {
   }
 
   dispositivo: IDispositivo = {
-    number: '0',
-    description: '0',
+    number: '',
+    description: '',
     type: 0,
   };
   contactData: IContact = {

@@ -32,19 +32,19 @@
 
     <div class="form-group">
 
-      <div class="box">
-        <div class="textoinput">
-        <label for="name">Nombre:</label>
-        <input class="cont_input"
-               type="text"
-               id="name"
-               name="name"
-               [(ngModel)]="contactData.name"
-               required><br>
-        </div>      
-      </div>
-
       <div id="dispositivosContainer">
+
+        <div class="box">
+          <div class="textoinput">
+          <label for="name">Nombre:</label>
+          <input class="cont_input"
+                 type="text"
+                 id="name"
+                 name="name"
+                 [(ngModel)]="contactData.name"
+                 required><br>
+          </div>      
+        </div>
 
         <div *ngFor="let dispositivo of contactData.dispositivos, index as i">
 
@@ -64,6 +64,20 @@
 
           <div class="box">
             <div class="textoinput">
+              <label for="disp">Dispositivo:</label>
+              <select class="cont_input"
+                      id="type"
+                      name="type-{{i}}"
+                      [(ngModel)]="contactData.dispositivos[i].type">
+                <option value="0">CelularNumber</option>
+                <option value="1">PhoneNumber</option>
+                <option value="2">Fax</option>
+              </select><br>
+            </div>
+          </div>
+
+      <!--<div class="box">
+            <div class="textoinput">
             <label for="num">Dispositivo: ({{typeDispositivo[dispositivo.type]}})</label>
             <input class="cont_input"
                    type="number"
@@ -73,14 +87,15 @@
                    name="type-{{i}}"
                    [(ngModel)]="contactData.dispositivos[i].type"><br>
             </div>
-          </div>
+          </div> -->
 
           <div class="box">
             <div class="textoinput">
-            <label for="num">Descripción:</label>
+            <label for="desc">Descripción:</label>
             <input class="cont_input"
                    type="text"
                    id="desc"
+                   value=""
                    name="description-{{i}}"
                    [(ngModel)]="contactData.dispositivos[i].description"><br>
             </div>

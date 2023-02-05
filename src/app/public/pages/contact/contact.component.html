@@ -8,7 +8,7 @@
       <a class="button"
          (click)="borrar.showModal()"><img src="../assets/img/delete.png"
              alt=""></a>
-      <!-- <a class="button" [routerLink]="['/edit-contact']" class="undo"><img src="../assets/img/Edit.png" alt=""></a> -->
+      <a class="button" class="undo"><img src="../assets/img/Edit.png" alt=""></a>
     </div>
 
     <div class="lista">Datos Completos</div>
@@ -44,7 +44,7 @@
     </button>
     <button class="box"> <img src="../assets/img/Dispositive.png"
            alt=""
-           class="img2"> Dispositivo: ({{typeDispositivo[dispositivo.type]}}) <input class="cont_input"
+           class="img2"> Dispositivo:<!--({{typeDispositivo[dispositivo.type]}})--><input class="cont_input"
              type="number"
              id="type"
              name="type"

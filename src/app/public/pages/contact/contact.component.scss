@@ -100,3 +100,15 @@ dialog {
   font-family: 'sans-serif';
   color: #5e5e5e;
 }
+
+.cont_input {
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  border: unset;
+  font-family: "Segoe UI";
+  font-size: 10px;
+  border-radius: 25px;
+  width: 125px;
+  opacity: 0.4;
+}
