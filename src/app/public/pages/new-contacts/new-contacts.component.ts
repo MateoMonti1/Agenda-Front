@@ -56,6 +56,6 @@ export class NewContactsComponent implements OnInit {
   async onSubmit(form: NgForm) {
     console.log(this.contactData);
     const contactocreado = await this.cs.addContact(this.contactData); //ejectua addContact del contact service con los valores del form
-    this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+    // this.router.navigate(['/lista-contactos']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
   }
 }

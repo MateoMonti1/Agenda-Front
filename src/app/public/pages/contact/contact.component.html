@@ -8,7 +8,10 @@
       <a class="button"
          (click)="borrar.showModal()"><img src="../assets/img/delete.png"
              alt=""></a>
-      <a class="button" class="undo"><img src="../assets/img/Edit.png" alt=""></a>
+      <a class="button"
+         class="undo"><img src="../assets/img/Edit.png"
+             (click)="editContact()"
+             alt=""></a>
     </div>
 
     <div class="lista">Datos Completos</div>
@@ -26,38 +29,44 @@
 
 <section class="flex-container">
 
-  <button class="box"> Nombre: <input class="cont_input"
+  <button class="box"> Nombre: <div *ngIf="!isEdit">{{contact.name}}</div> <input class="cont_input"
            type="text"
            id="name"
            name="name"
            [(ngModel)]="contact.name"
+           *ngIf="isEdit"
            required> </button>
-  <div *ngFor="let dispositivo of contact.dispositivos">
+  <div *ngFor="let dispositivo of contact.dispositivos , index as i">
     <button class="box"> <img src="../assets/img/Telephone.png"
            alt=""
-           class="img2"> Teléfono:
+           class="img2"> Teléfono: <div *ngIf="!isEdit">{{dispositivo.number}}</div>
       <input class="cont_input"
              type="text"
              id="num"
-             name="num"
+             name="num-{{i}}"
+             *ngIf="isEdit"
              [(ngModel)]="dispositivo.number">
     </button>
     <button class="box"> <img src="../assets/img/Dispositive.png"
            alt=""
-           class="img2"> Dispositivo:<!--({{typeDispositivo[dispositivo.type]}})--><input class="cont_input"
-             type="number"
-             id="type"
-             name="type"
-             min="0"
-             max="2"
-             [(ngModel)]="dispositivo.type">
+           class="img2"> Dispositivo:
+      <select class="cont_input"
+              id="type"
+              name="type-{{i}}"
+              [(ngModel)]="dispositivo.type"
+              [disabled]="!isEdit">
+        <option [ngValue]="0">CelularNumber</option>
+        <option [ngValue]="1">PhoneNumber</option>
+        <option [ngValue]="2">Fax</option>
+      </select>
     </button>
     <button class="box"> <img src="../assets/img/Description.png"
            alt=""
-           class="img2"> Descripción: <input class="cont_input"
+           class="img2"> Descripción: <div *ngIf="!isEdit">{{dispositivo.description}}</div> <input class="cont_input"
              type="text"
              id="desc"
-             name="description"
+             name="description-{{i}}"
+             *ngIf="isEdit"
              [(ngModel)]="dispositivo.description"> </button>
   </div>
   <div>

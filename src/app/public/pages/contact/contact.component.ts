@@ -10,7 +10,7 @@ import { ContactosService } from 'src/app/core/services/contactos.service';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  typeDispositivo = ['CelularNumber', 'PhoneNumber', 'Fax'];
+  isEdit = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,9 +47,11 @@ export class ContactComponent implements OnInit {
   }
 
   async edit() {
-    // console.log(this.contact);
     let edit = await this.cs.editContact(this.contact);
-    alert('se guardo el contacto');
     this.router.navigate(['/lista-contactos']);
+  }
+
+  editContact() {
+    this.isEdit = !this.isEdit;
   }
 }
